@@ -2,7 +2,7 @@
 
 A 30-year statistical audit of candlestick patterns, volatility regimes, and the variance risk premium on SPY.
 
-I built four reproducible scripts to ask whether candlestick folklore predicts the next bar, whether a causal volatility-regime filter can dodge short-vol tail risk, and whether any of it survives honest measurement. Candlestick direction signals fail after costs. A three-state HMM on volatility is real and persistent. The variance risk premium exists at roughly +3.8 annualized vol points once I fixed a Garman-Klass estimator bug that had inflated Sharpe from 6.15 to a still-positive 1.11. Causal regime gating on a stylized short-vol proxy holds up on a 2016-2026 holdout (friction-adjusted Sharpe 2.76), but defined-risk options translation is blocked by an ~80% synthetic pricer bias. Everything here is simulated research output, not a live trading record.
+I built four reproducible scripts to ask whether candlestick folklore predicts the next bar, whether a causal volatility-regime filter can dodge short-vol tail risk, and whether any of it survives honest measurement. Candlestick direction signals fail after costs. A three-state HMM on volatility is real and persistent. The variance risk premium exists at roughly +3.8 annualized vol points once I fixed a Garman-Klass estimator bug that had inflated Sharpe from 6.15 to a still-positive 1.11. Causal regime gating on a stylized short-vol proxy holds up on a 2016-2026 holdout (friction-adjusted Sharpe 2.76), and the relative edge survives translation into defined-risk spreads, but its absolute size depends on whether synthetic credits match real quoted marks; historical bar validation at this data tier showed ~80% overstatement and a failed IV sanity gate. Everything here is simulated research output, not a live trading record.
 
 **[Read the full writeup](WRITEUP.md)**
 
@@ -44,7 +44,7 @@ More figures and tables: **[WRITEUP.md](WRITEUP.md)**.
 
 ## Related work
 
-This audit sits in a line of work on variance risk premia and volatility timing: Marshall, Young, and Rose (2006) on candlestick efficacy; Caginalp and Laurent on predictive candle patterns; Duvinage, Glatz, and Hübner (2013) on intraday pattern profitability; Carr and Wu (2009) on variance swap rates; Corsi (2009) HAR-RV forecasting; Moreira and Muir (2017) on volatility-managed portfolios; Cederburg, O'Doherty, and Wang (2020) on options return predictability; and López de Prado's *Advances in Financial Machine Learning* on leakage and multiple-testing discipline. I treat published VRP magnitudes (+2 to +4 vol points on SPY) as the sanity check that exposed my Garman-Klass bug.
+This audit sits in a line of work on variance risk premia and volatility timing: Marshall, Young, and Rose (2006) on candlestick efficacy; Caginalp and Laurent (1998) on predictive candle patterns; Duvinage, Mazza, and Petitjean (2013) on intraday pattern profitability; Carr and Wu (2009) on variance swap rates; Corsi (2009) HAR-RV forecasting; Moreira and Muir (2017) on volatility-managed portfolios; Cederburg, O'Doherty, Wang, and Yan (2020) on the real-time out-of-sample performance of volatility-managed portfolios; and López de Prado's *Advances in Financial Machine Learning* on leakage and multiple-testing discipline. I treat published VRP magnitudes (+2 to +4 vol points on SPY) as the sanity check that exposed my Garman-Klass bug.
 
 ## Quickstart
 
@@ -79,7 +79,7 @@ Figures land in `output/`. Parquet caches land in `data/` (gitignored).
 
 ## Repository layout
 
-| File | Role |
+| Path | Role |
 |------|------|
 | `candle_markov_experiment.py` | Candle states, chi-square tests, HMM regimes |
 | `vrp_experiment.py` | HAR-RV forecast, VRP series, short-vol proxy |
@@ -87,6 +87,10 @@ Figures land in `output/`. Parquet caches land in `data/` (gitignored).
 | `structure_translation_experiment.py` | Synthetic pricer, PCS translation, Massive validation |
 | `research_utils.py` | Friction config, `.env` loader, minimal FRED client |
 | `WRITEUP.md` | Full narrative audit |
+| `output/` | Generated figures (PNG); referenced by README and writeup |
+| `requirements.txt` | Pinned Python dependencies |
+| `.env.example` | Optional API key template (no keys required for daily yfinance path) |
+| `LICENSE` | MIT license |
 
 ## Disclaimer
 
