@@ -44,7 +44,7 @@ More figures and tables: **[WRITEUP.md](WRITEUP.md)**.
 
 ## Related work
 
-This audit sits in a line of work on variance risk premia, volatility timing, and technical-pattern testing. I treat published SPY VRP magnitudes (+2 to +4 vol points) as the sanity check that exposed my Garman-Klass bug. Full bibliographic citations are in [References](#references) below and in [WRITEUP.md](WRITEUP.md#references).
+This audit sits in a line of work on variance risk premia, volatility timing, and technical-pattern testing: Marshall, Young, and Rose (2006) and Marshall, Young, and Cahan (2008) on candlestick efficacy; Caginalp and Laurent (1998) on predictive price patterns; Duvinage, Mazza, and Petitjean (2013) on intraday candlestick profitability; Carr and Wu (2009) on variance risk premiums; Corsi (2009) on HAR-RV forecasting; Moreira and Muir (2017) on volatility-managed portfolios; Cederburg, O'Doherty, Wang, and Yan (2020) on real-time out-of-sample performance of volatility-managed portfolios; and López de Prado (2018) on backtest overfitting and multiple-testing discipline. Estimators and inference follow Garman and Klass (1980), Yang and Zhang (2000), Hamilton (1989), Newey and West (1987), Wilson (1927), and Bailey and López de Prado (2014). I treat published SPY VRP magnitudes (+2 to +4 vol points) as the sanity check that exposed my Garman-Klass bug. Full citations are in [References](#references) below and in [WRITEUP.md](WRITEUP.md#references).
 
 ## Quickstart
 
@@ -94,33 +94,52 @@ Figures land in `output/`. Parquet caches land in `data/` (gitignored).
 
 ## References
 
-### Candlestick and technical pattern studies
+**Related work**
 
-Marshall, B. R., Young, M. R., & Rose, L. C. (2006). Candlestick technical trading strategies: Can they create value for investors? *Journal of Banking & Finance*, 30(8), 2303-2323. https://doi.org/10.1016/j.jbankfin.2005.08.001
+- Caginalp, G., & Laurent, H. (1998). The predictive power of price patterns. 
+  *Applied Mathematical Finance*, 5(3-4), 181-205.
+- Carr, P., & Wu, L. (2009). Variance risk premiums. *Review of Financial 
+  Studies*, 22(3), 1311-1341.
+- Cederburg, S., O'Doherty, M. S., Wang, F., & Yan, X. S. (2020). On the 
+  performance of volatility-managed portfolios. *Journal of Financial 
+  Economics*, 138(1), 95-117.
+- Corsi, F. (2009). A simple approximate long-memory model of realized 
+  volatility. *Journal of Financial Econometrics*, 7(2), 174-196.
+- Duvinage, M., Mazza, P., & Petitjean, M. (2013). The intra-day performance 
+  of market timing strategies and trading systems based on Japanese 
+  candlesticks. *Quantitative Finance*, 13(7), 1059-1070.
+- López de Prado, M. (2018). *Advances in Financial Machine Learning*. 
+  Hoboken, NJ: Wiley.
+- Marshall, B. R., Young, M. R., & Rose, L. C. (2006). Candlestick technical 
+  trading strategies: Can they create value for investors? *Journal of 
+  Banking & Finance*, 30(8), 2303-2323.
+- Marshall, B. R., Young, M. R., & Cahan, R. (2008). Are candlestick 
+  technical trading strategies profitable in the Japanese equity market? 
+  *Review of Quantitative Finance and Accounting*, 31(2), 191-207.
+- Moreira, A., & Muir, T. (2017). Volatility-managed portfolios. *Journal 
+  of Finance*, 72(4), 1611-1644.
 
-Caginalp, G., & Laurent, H. (1998). The predictive power of price patterns. *Applied Mathematical Finance*, 5(3-4), 181-205. https://doi.org/10.1080/135048698334637
+**Methods**
 
-Duvinage, M., Mazza, P., & Petitjean, M. (2013). The intra-day performance of market timing strategies and trading systems based on Japanese candlesticks. *Quantitative Finance*, 13(7), 1059-1070. https://doi.org/10.1080/14697688.2013.768774
-
-### Variance risk premium and realized volatility
-
-Carr, P., & Wu, L. (2009). Variance risk premiums. *Review of Financial Studies*, 22(3), 1311-1341. https://doi.org/10.1093/rfs/hhn062
-
-Corsi, F. (2009). A simple approximate long-memory model of realized volatility. *Journal of Financial Econometrics*, 7(2), 174-196. https://doi.org/10.1093/jjfinec/nbp001
-
-Garman, M. B., & Klass, M. J. (1980). On the estimation of security price volatilities from historical data. *Journal of Business*, 53(1), 67-78. https://doi.org/10.1086/296072
-
-Yang, D., & Zhang, Q. (2000). Drift-independent volatility estimation based on high, low, open, and close prices. *Journal of Business*, 73(3), 477-491. https://doi.org/10.1086/209655
-
-### Volatility-managed portfolios
-
-Moreira, A., & Muir, T. (2017). Volatility-managed portfolios. *Journal of Finance*, 72(4), 1611-1644. https://doi.org/10.1111/jofi.12518
-
-Cederburg, S., O'Doherty, M. S., Wang, F., & Yan, X. (S.) (2020). On the performance of volatility-managed portfolios. *Journal of Financial Economics*, 138(1), 95-117. https://doi.org/10.1016/j.jfineco.2020.04.015
-
-### Research methodology
-
-López de Prado, M. (2018). *Advances in Financial Machine Learning*. Wiley. ISBN 978-1119482086.
+- Bailey, D. H., & López de Prado, M. (2014). The deflated Sharpe ratio: 
+  Correcting for selection bias, backtest overfitting, and non-normality. 
+  *Journal of Portfolio Management*, 40(5), 94-107.
+- Garman, M. B., & Klass, M. J. (1980). On the estimation of security price 
+  volatilities from historical data. *Journal of Business*, 53(1), 67-78.
+- Hamilton, J. D. (1989). A new approach to the economic analysis of 
+  nonstationary time series and the business cycle. *Econometrica*, 57(2), 
+  357-384.
+- Newey, W. K., & West, K. D. (1987). A simple, positive semi-definite, 
+  heteroskedasticity and autocorrelation consistent covariance matrix. 
+  *Econometrica*, 55(3), 703-708.
+- Rogers, L. C. G., & Satchell, S. E. (1991). Estimating variance from high, 
+  low and closing prices. *Annals of Applied Probability*, 1(4), 504-512.
+- Wilson, E. B. (1927). Probable inference, the law of succession, and 
+  statistical inference. *Journal of the American Statistical Association*, 
+  22(158), 209-212.
+- Yang, D., & Zhang, Q. (2000). Drift-independent volatility estimation 
+  based on high, low, open, and close prices. *Journal of Business*, 73(3), 
+  477-491.
 
 ## Disclaimer
 
