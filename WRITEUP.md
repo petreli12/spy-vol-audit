@@ -39,6 +39,8 @@ Large n makes p-values cheap. A fixed five-percent edge in probability on a fift
   
   *Fifteen-minute candle states vs next-bar P(up); color shows deviation from baseline, not tradable edge.*
 
+  
+
 ![Next-bar direction heatmap by candle state (1d)](output/state_nextdir_heatmap_1d.png)
   
   *Daily candle states vs next-bar P(up); unconditional test is not significant (p = 0.79).*
