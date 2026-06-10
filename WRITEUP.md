@@ -65,7 +65,8 @@ On fifteen-minute intraday data the vol spread is smaller (2.08×) but the same 
 *Daily SPY colored by decoded volatility regime; crises cluster in the high-vol state.*
 
 ![Regime transition matrix (1d)](output/regime_transition_1d.png)
-*Empirical HMM transition probabilities; diagonal persistence dominates.*
+
+  *Empirical HMM transition probabilities; diagonal persistence dominates.*
 
 ---
 
