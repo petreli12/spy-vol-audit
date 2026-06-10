@@ -1,0 +1,16 @@
+# Pinned to versions used when this audit was last reproduced (Python 3.11+).
+pandas==2.3.3
+numpy==2.4.4
+scipy==1.17.1
+matplotlib==3.10.9
+statsmodels==0.14.6
+hmmlearn==0.3.3
+yfinance==1.3.0
+lxml==6.1.0
+requests==2.34.0
+tenacity==8.5.0
+pyarrow==24.0.0
+python-dotenv==1.2.2
+# Optional: intraday Alpaca bars and Massive option aggregates (see .env.example).
+alpaca-py==0.43.4
+massive==2.7.0
