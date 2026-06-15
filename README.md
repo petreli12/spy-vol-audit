@@ -4,7 +4,8 @@ A 30-year statistical audit of candlestick patterns, volatility regimes, and the
 
 I built four reproducible scripts to ask whether candlestick folklore predicts the next bar, whether a causal volatility-regime filter can dodge short-vol tail risk, and whether any of it survives honest measurement. Candlestick direction signals fail after costs. A three-state HMM on volatility is real and persistent. The variance risk premium exists at roughly +3.8 annualized vol points once I fixed a Garman-Klass estimator bug that had inflated Sharpe from 6.15 to a still-positive 1.11. Causal regime gating on a stylized short-vol proxy holds up on a 2016-2026 holdout (friction-adjusted Sharpe 2.76), and the relative edge survives translation into defined-risk spreads, but its absolute size depends on whether synthetic credits match real quoted marks; historical bar validation at this data tier showed ~80% overstatement and a failed IV sanity gate. Everything here is simulated research output, not a live trading record.
 
-**[Read the full writeup](WRITEUP.md)** and the Medium article here: https://medium.com/@olayemioladapo1/i-audited-30-years-of-spy-candlesticks-and-the-variance-risk-premium-9f0bb733965e
+**[Read the full writeup](WRITEUP.md)** and the [Medium article] (https://medium.com/@olayemioladapo1/i-audited-30-years-of-spy-candlesticks-and-the-variance-risk-premium-9f0bb733965e) for more information.
+
 
 ## Headline results
 
